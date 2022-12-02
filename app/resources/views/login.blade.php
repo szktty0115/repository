@@ -16,19 +16,16 @@
 </head>
 
 <body class="text-center bg-light">
-    <h1>ログイン</h1>
-
     <form class="border rounded bg-white form-login">
-        <div class="form-group">
-            <input type="email" class="form-control" placeholder="メールアドレス">
+        <h1 class="h10 my-10">ログイン</h1>
+        <div class="form-group pt-3">
+            <input type="email" class="form-control my-3" placeholder="メールアドレス">
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="パスワード">
+            <input type="password" class="form-control my3" placeholder="パスワード">
         </div>
-        <div class="mb-3 form-check">
+        <div class="my-3 form-check">
             <button type="submit" class="btn btn-primary">ログイン</button>
-        </div>
-        <div class="mb-3 form-check">
             <button type="submit" class="btn btn-primary">パスワード忘れた方</button>
         </div>
     </form>

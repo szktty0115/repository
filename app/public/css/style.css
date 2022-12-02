@@ -1,21 +1,26 @@
 body {
-    padding: 500px 0;
+    padding: 200px 0;
     color: #707070;
 }
 
-form-login {
+.form-login {
     width: 100%;
-    max-width: 500px;
+    max-width: 80%;
     margin: auto;
-    padding: 200px;
+    padding: 15px;
 }
 
 .form-login input {
-    max-width: 300px;
+    width: 100%;
+    max-width: 80%;
     margin: auto;
     height: 50px;
 }
 
 .btn {
     height: 50px;
+}
+
+.form {
+    width: 90%;
 }
