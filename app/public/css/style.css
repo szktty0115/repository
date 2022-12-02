@@ -1,0 +1,21 @@
+body {
+    padding: 500px 0;
+    color: #707070;
+}
+
+form-login {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    padding: 200px;
+}
+
+.form-login input {
+    max-width: 300px;
+    margin: auto;
+    height: 50px;
+}
+
+.btn {
+    height: 50px;
+}
