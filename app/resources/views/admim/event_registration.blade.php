@@ -12,37 +12,42 @@
     <!-- オリジナル CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-    <title>応募者一覧（主催者）</title>
+    <title>大会日程登録（主催者）</title>
 </head>
 
 <body class="text-center bg-light">
+    <h1 class="h10 my-10">大会日程登録</h1>
+
     <form class="border rounded bg-white form-login">
-        <h1 class="h10 my-10">応募者一覧</h1>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th scope="col">ユーザー名</th>
-                    <th scope="col">出場生年月日</th>
-                    <th scope="col">出場電話番号</th>
-                    <th scope="col">出場メールアドレス</th>
-                    <th scope="col">コメント</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                </tr>
-            </tbody>
-        </table>
+        <div class="form-group">
+            <p>ゲーム名</p>
+            <input type="name" class="form-control my3" placeholder="ゲーム名">
+        </div>
+        <div class="form-group">
+            <p>大会名</p>
+            <input type="" class="form-control my3" placeholder="大会名">
+        </div>
+        <div class="form-group">
+            <p>募集期間</p>
+            <input type="tel" class="form-control my3" placeholder="募集期間">
+        </div>
+        <div class="form-group">
+            <p>上限人数</p>
+            <input type="tel" class="form-control my3" placeholder="上限人数">
+        </div>
+        <div class="form-group">
+            <p>大会日時</p>
+            <input type="tel" class="form-control my3" placeholder="大会日時">
+        </div>
+        <div class="form-group">
+            <p>募集要項</p>
+            <input type="tel" class="form-control my3" placeholder="募集要項">
+        </div>
+
         <div class="my-3 form-check">
-            <button type="submit" class="btn btn-primary">TOPへ</button>
+            <button type="submit" class="btn btn-primary">確認</button>
         </div>
     </form>
-
 
     <!-- Optional JavaScript; choose one of the two! -->
 

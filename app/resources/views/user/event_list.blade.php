@@ -1,4 +1,3 @@
-1
 <!doctype html>
 <html lang="ja">
 
@@ -13,48 +12,41 @@
     <!-- オリジナル CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-    <title>大会応募ページ</title>
+    <title>大会一覧</title>
 </head>
 
 <body class="text-center bg-light">
     <form class="border rounded bg-white form-login">
-        <h1 class="h10 my-10">応募ページ</h1>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th scope="col">ゲーム名</th>
-                    <th scope="col">大会名</th>
-                    <th scope="col">募集期間</th>
-                    <th scope="col">上限人数</th>
-                    <th scope="col">大会日時</th>
-                    <th scope="col">募集要項</th>
-                </tr>
-            </thead>
-
-            <div class="form-group">
-                <p>ユーザー名</p>
-                <input type="name" class="form-control my3" placeholder="氏名">
-            </div>
-            <div class="form-group">
-                <p>出場者生年月日</p>
-                <input type="" class="form-control my3" placeholder="生年月日">
-            </div>
-            <div class="form-group">
-                <p>出場者電話番号</p>
-                <input type="tel" class="form-control my3" placeholder="電話版号">
-            </div>
-            <div class="form-group pt-3">
-                <p>出場者メールアドレス</p>
-                <input type="email" class="form-control my-3" placeholder="メールアドレス">
-            </div>
-            <div class="form-group pt-3">
-                <p>コメント</p>
-                <input type="comment" class="form-control my-3" placeholder="コメント">
-            </div>
-
-            <div class="my-3 form-check">
-                <button type="submit" class="btn btn-primary">応募</button>
-            </div>
+        <h1 class="h10 mx-10 my-10">募集中の大会一覧</h1>
+        <div class="input-group my-5">
+            <input type="text" class="form-control" placeholder="キーワードを入力">
+            <button class="btn btn-outline-success" type="button" id="button-addon2"><i class="fas fa-search"></i>検索</button>
+        </div>
+        <table class="table table-bordered my-5">
+            <tr>
+                <th scope="col">大会イメージ画像</th>
+                <td scope="col"><img src="img/sample1.jpg"></td>
+            </tr>
+            <tr>
+                <th scope="col">ゲーム名</th>
+                <th scope="col">大会名</th>
+                <th scope="col">募集期間</th>
+                <th scope="col">上限人数</th>
+                <th scope="col">大会日時</th>
+                <th scope="col">募集要項</th>
+            </tr>
+            <tr>
+                <th scope="col">a</th>
+                <th scope="col">a</th>
+                <th scope="col">a</th>
+                <th scope="col">a</th>
+                <th scope="col">a</th>
+                <th scope="col">a</th>
+            </tr>
+        </table>
+        <div class="my-4 form-check">
+            <button type="submit" class="btn btn-primary">応募</button>
+        </div>
     </form>
     <!-- Optional JavaScript; choose one of the two! -->
 

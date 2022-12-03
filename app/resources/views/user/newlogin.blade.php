@@ -12,7 +12,7 @@
     <!-- オリジナル CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-    <title>新規ユーザー登録画面</title>
+    <title>新規ユーザー登録（一般）</title>
 </head>
 
 <body class="text-center bg-light">
