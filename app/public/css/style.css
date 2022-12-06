@@ -1,5 +1,4 @@
 body {
-    padding: 200px 0;
     color: #707070;
 }
 
@@ -23,4 +22,20 @@ body {
 
 .form {
     width: 90%;
+}
+
+header {
+    height: 100px;
+    color: #ccffff;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2.2rem;
+    padding-bottom: 0.5rem;
+    color: #ccffff;
 }
