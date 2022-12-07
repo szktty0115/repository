@@ -16,9 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/login', function () {
-    return view('login');
+    return view('user.login');
 });
-
 Route::get('/top', function () {
     return view('user.top');
 });
