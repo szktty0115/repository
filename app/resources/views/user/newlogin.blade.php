@@ -49,19 +49,23 @@
     <form class="border rounded bg-white form-login">
         <div class="form-group">
             <p>氏名</p>
-            <input type="name" class="form-control my3" placeholder="氏名">
+            <input type="name" class="form-control myー3" placeholder="氏名">
         </div>
         <div class="form-group">
             <p>生年月日</p>
-            <input type="" class="form-control my3" placeholder="生年月日">
+            <input type="" class="form-control myー3" placeholder="生年月日">
         </div>
         <div class="form-group">
             <p>電話番号</p>
-            <input type="tel" class="form-control my3" placeholder="電話版号">
+            <input type="tel" class="form-control myー3" placeholder="電話版号">
         </div>
-        <div class="form-group pt-3">
+        <div class="form-group">
             <p>メールアドレス</p>
             <input type="email" class="form-control my-3" placeholder="メールアドレス">
+        </div>
+        <div class="form-group">
+            <p>パスワード</p>
+            <input type="password" class="form-control my-3" placeholder="パスワード">
         </div>
         <div class="my-3 form-check">
             <button type="submit" class="btn btn-primary">確認</button>
@@ -83,4 +87,3 @@
 </body>
 
 </html>
-Footer

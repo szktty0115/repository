@@ -34,6 +34,10 @@
             <p>主催者メールアドレス</p>
             <input type="email" class="form-control my-3" placeholder="メールアドレス">
         </div>
+        <div class="form-group pt">
+            <p>パスワード</p>
+            <input type="password" class="form-control my-3" placeholder="パスワード">
+        </div>
         <div class="my-3 form-check">
             <button type="submit" class="btn btn-primary">確認</button>
         </div>

@@ -22,3 +22,10 @@ Route::get('/login', function () {
 Route::get('/top', function () {
     return view('user.top');
 });
+Route::get('/newlogin', function () {
+    return view('user.newlogin');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
