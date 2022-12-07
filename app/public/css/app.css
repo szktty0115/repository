@@ -1,0 +1,30 @@
+body {
+    color: #707070;
+}
+
+.form-login {
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+    padding: 15px;
+}
+
+.form-login input {
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+    height: 50px;
+}
+
+.btn {
+    height: 50px;
+}
+
+.form {
+    width: 90%;
+}
+
+header {
+    height: 100px;
+    color: #ccffff;
+}
