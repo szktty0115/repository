@@ -38,3 +38,13 @@ Route::prefix('x')->name('x.')->group(function () {
     Route::delete('/posts/{post}', 'XDashboardController@destroy')->name('posts.destroy');
     Route::post('/followers', 'XDashboardController@recordFollowers')->name('followers.store');
 });
+
+Route::prefix('threads')->name('threads.')->group(function () {
+    Route::get('/', 'ThreadsDashboardController@index')->name('dashboard');
+    Route::post('/generate', 'ThreadsDashboardController@generate')->name('generate');
+    Route::post('/posts', 'ThreadsDashboardController@storeManual')->name('posts.store');
+    Route::post('/posts/{post}/schedule', 'ThreadsDashboardController@schedule')->name('posts.schedule');
+    Route::post('/posts/{post}/publish', 'ThreadsDashboardController@publishNow')->name('posts.publish');
+    Route::delete('/posts/{post}', 'ThreadsDashboardController@destroy')->name('posts.destroy');
+    Route::post('/followers', 'ThreadsDashboardController@recordFollowers')->name('followers.store');
+});

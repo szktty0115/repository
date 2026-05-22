@@ -40,6 +40,13 @@ return [
         'genre' => env('X_CONTENT_GENRE', 'プログラミング・技術'),
     ],
 
+    'threads' => [
+        'access_token' => env('THREADS_ACCESS_TOKEN'),
+        'user_id' => env('THREADS_USER_ID'),
+        'username' => env('THREADS_USERNAME'),
+        'genre' => env('THREADS_CONTENT_GENRE', 'プログラミング・技術'),
+    ],
+
     'anthropic' => [
         'api_key' => env('ANTHROPIC_API_KEY'),
         'model' => env('ANTHROPIC_MODEL', 'claude-opus-4-7'),

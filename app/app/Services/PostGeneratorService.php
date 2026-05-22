@@ -5,19 +5,18 @@ namespace App\Services;
 use RuntimeException;
 
 /**
- * Anthropic (Claude) API を使って X 投稿の下書きを生成する。
+ * Anthropic (Claude) API を使って SNS 投稿の下書きを生成する。
+ * X / Threads など複数プラットフォームで共通利用する。
  */
 class PostGeneratorService
 {
     private $apiKey;
     private $model;
-    private $genre;
 
     public function __construct()
     {
         $this->apiKey = config('services.anthropic.api_key');
         $this->model = config('services.anthropic.model') ?: 'claude-opus-4-7';
-        $this->genre = config('services.x.genre') ?: 'プログラミング・技術';
     }
 
     public function isConfigured(): bool
@@ -30,7 +29,7 @@ class PostGeneratorService
      *
      * @return string[]
      */
-    public function generateDrafts(int $count = 5): array
+    public function generateDrafts(int $count, string $platform, string $genre, int $maxChars): array
     {
         if (!$this->isConfigured()) {
             throw new RuntimeException('Anthropic API キー（ANTHROPIC_API_KEY）が設定されていません。');
@@ -38,19 +37,19 @@ class PostGeneratorService
 
         $count = max(1, min($count, 15));
 
-        $system = 'あなたは日本語で発信する X（旧Twitter）アカウントの運用担当者です。'
-            . 'アカウントのジャンルは「' . $this->genre . '」。'
+        $system = 'あなたは日本語で発信する ' . $platform . ' アカウントの運用担当者です。'
+            . 'アカウントのジャンルは「' . $genre . '」。'
             . 'フォロワーに価値を届け、自然に共感やフォローを得られる投稿を作るのが役割です。'
-            . '各投稿のルール: 日本語で全角120文字以内、1投稿につき1メッセージ、'
+            . '各投稿のルール: 日本語で全角' . $maxChars . '文字以内、1投稿につき1メッセージ、'
             . 'URLや画像が前提の表現は使わない、ハッシュタグは多くても1つ、'
             . '誇張・釣り・スパム的な表現は禁止、読み手がすぐ実践できる具体性を持たせること。';
 
-        $prompt = '次の条件で、X に投稿するツイート案を' . $count . '件作成してください。' . "\n"
-            . '- ジャンル: ' . $this->genre . "\n"
+        $prompt = '次の条件で、' . $platform . ' に投稿する投稿案を' . $count . '件作成してください。' . "\n"
+            . '- ジャンル: ' . $genre . "\n"
             . '- 学習者や同業のエンジニアにとって役立つ、具体的な気づき・Tips・考え方を中心に' . "\n"
-            . '- 出力は JSON 配列のみ。各要素はツイート本文の文字列とすること。' . "\n"
+            . '- 出力は JSON 配列のみ。各要素は投稿本文の文字列とすること。' . "\n"
             . '- 説明文・見出し・コードブロックは付けない。' . "\n"
-            . '例: ["ツイート1の本文", "ツイート2の本文"]';
+            . '例: ["投稿1の本文", "投稿2の本文"]';
 
         $payload = [
             'model' => $this->model,

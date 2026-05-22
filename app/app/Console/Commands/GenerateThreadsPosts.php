@@ -2,16 +2,16 @@
 
 namespace App\Console\Commands;
 
-use App\Models\XPost;
+use App\Models\ThreadsPost;
 use App\Services\PostGeneratorService;
 use Illuminate\Console\Command;
 use Throwable;
 
-class GenerateXPosts extends Command
+class GenerateThreadsPosts extends Command
 {
-    protected $signature = 'x:generate-posts {count=5 : 生成する投稿案の件数}';
+    protected $signature = 'threads:generate-posts {count=5 : 生成する投稿案の件数}';
 
-    protected $description = 'Claude API を使って X 投稿の下書きを自動生成する';
+    protected $description = 'Claude API を使って Threads 投稿の下書きを自動生成する';
 
     public function handle(PostGeneratorService $generator): int
     {
@@ -25,9 +25,9 @@ class GenerateXPosts extends Command
         try {
             $drafts = $generator->generateDrafts(
                 $count,
-                'X（旧Twitter）',
-                config('services.x.genre'),
-                120
+                'Threads',
+                config('services.threads.genre'),
+                500
             );
         } catch (Throwable $e) {
             $this->error('投稿案の生成に失敗しました: ' . $e->getMessage());
@@ -35,9 +35,9 @@ class GenerateXPosts extends Command
         }
 
         foreach ($drafts as $body) {
-            XPost::create([
+            ThreadsPost::create([
                 'body' => $body,
-                'status' => XPost::STATUS_DRAFT,
+                'status' => ThreadsPost::STATUS_DRAFT,
                 'source' => 'ai',
             ]);
         }
