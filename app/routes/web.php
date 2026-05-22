@@ -29,6 +29,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::prefix('x')->name('x.')->group(function () {
+    Route::get('/', 'XDashboardController@index')->name('dashboard');
+    Route::post('/generate', 'XDashboardController@generate')->name('generate');
+    Route::post('/posts', 'XDashboardController@storeManual')->name('posts.store');
+    Route::post('/posts/{post}/schedule', 'XDashboardController@schedule')->name('posts.schedule');
+    Route::post('/posts/{post}/publish', 'XDashboardController@publishNow')->name('posts.publish');
+    Route::delete('/posts/{post}', 'XDashboardController@destroy')->name('posts.destroy');
+    Route::post('/followers', 'XDashboardController@recordFollowers')->name('followers.store');
+});

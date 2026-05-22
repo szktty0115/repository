@@ -30,4 +30,19 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'x' => [
+        'api_key' => env('X_API_KEY'),
+        'api_secret' => env('X_API_SECRET'),
+        'access_token' => env('X_ACCESS_TOKEN'),
+        'access_token_secret' => env('X_ACCESS_TOKEN_SECRET'),
+        'bearer_token' => env('X_BEARER_TOKEN'),
+        'username' => env('X_USERNAME'),
+        'genre' => env('X_CONTENT_GENRE', 'プログラミング・技術'),
+    ],
+
+    'anthropic' => [
+        'api_key' => env('ANTHROPIC_API_KEY'),
+        'model' => env('ANTHROPIC_MODEL', 'claude-opus-4-7'),
+    ],
+
 ];
