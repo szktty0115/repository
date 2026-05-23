@@ -24,8 +24,13 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('x:generate-posts 7')->weeklyOn(1, '6:00');
+        $schedule->command('x:publish-due')->everyFifteenMinutes();
+        $schedule->command('x:snapshot-followers')->dailyAt('23:50');
+
+        $schedule->command('threads:generate-posts 7')->weeklyOn(1, '6:30');
+        $schedule->command('threads:publish-due')->everyFifteenMinutes();
+        $schedule->command('threads:snapshot-followers')->dailyAt('23:55');
     }
 
     /**

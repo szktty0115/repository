@@ -35,7 +35,17 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('x.dashboard') }}">X運用</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('threads.dashboard') }}">Threads運用</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('note.dashboard') }}">note記事</a>
+                        </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
