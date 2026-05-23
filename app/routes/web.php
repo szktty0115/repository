@@ -48,3 +48,12 @@ Route::prefix('threads')->name('threads.')->group(function () {
     Route::delete('/posts/{post}', 'ThreadsDashboardController@destroy')->name('posts.destroy');
     Route::post('/followers', 'ThreadsDashboardController@recordFollowers')->name('followers.store');
 });
+
+Route::prefix('note')->name('note.')->group(function () {
+    Route::get('/', 'NoteDashboardController@index')->name('dashboard');
+    Route::post('/generate', 'NoteDashboardController@generate')->name('generate');
+    Route::post('/articles/{article}', 'NoteDashboardController@update')->name('articles.update');
+    Route::post('/articles/{article}/publish', 'NoteDashboardController@markPublished')->name('articles.publish');
+    Route::post('/articles/{article}/draft', 'NoteDashboardController@markDraft')->name('articles.draft');
+    Route::delete('/articles/{article}', 'NoteDashboardController@destroy')->name('articles.destroy');
+});

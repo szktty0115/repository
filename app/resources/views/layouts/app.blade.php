@@ -42,6 +42,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('threads.dashboard') }}">Threads運用</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('note.dashboard') }}">note記事</a>
+                        </li>
                         @endauth
                     </ul>
 

@@ -47,6 +47,11 @@ return [
         'genre' => env('THREADS_CONTENT_GENRE', 'プログラミング・技術'),
     ],
 
+    'note' => [
+        'genre' => env('NOTE_CONTENT_GENRE', 'プログラミング・技術'),
+        'target_chars' => env('NOTE_TARGET_CHARS', 2500),
+    ],
+
     'anthropic' => [
         'api_key' => env('ANTHROPIC_API_KEY'),
         'model' => env('ANTHROPIC_MODEL', 'claude-opus-4-7'),
